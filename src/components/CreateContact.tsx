@@ -11,8 +11,11 @@ import { addContact } from "../redux/contactsSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
 
-export function CreateContact({ handleOpenCreate, openCreate }: any) {
+export function CreateContact() {
   const dispatch = useDispatch<AppDispatch>();
+
+  const [openCreate, setOpenCreate] = useState(false);
+  const handleOpenCreate = () => setOpenCreate(!openCreate);
 
   const [data, setData] = useState({
     firstName: "",
@@ -26,7 +29,7 @@ export function CreateContact({ handleOpenCreate, openCreate }: any) {
 
   const handleCreate = (e: any) => {
     const newContact = {
-      id: ~~(Math.random() * 10000000), // You might want to use a better way to generate IDs
+      id: ~~(Math.random() * 10000000),
       ...data,
     };
     dispatch(addContact(newContact));
@@ -35,7 +38,9 @@ export function CreateContact({ handleOpenCreate, openCreate }: any) {
 
   return (
     <>
-      <Button onClick={handleOpenCreate}>Add Contact</Button>
+      <Button className='m-auto w-auto' onClick={handleOpenCreate}>
+        Add Contact
+      </Button>
       <Dialog open={openCreate} handler={handleOpenCreate}>
         <div className='flex items-center justify-between'>
           <DialogHeader>Create New Contact</DialogHeader>

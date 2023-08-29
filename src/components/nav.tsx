@@ -10,16 +10,16 @@ const Nav = () => {
 
   return (
     <>
-      {size.width !== null && size.width > 624 ? (
+      {size.width !== null && size.width > 720 ? (
         <nav className='min-w-[320px] border-r-2 h-auto bg-stone-200 flex flex-col items-start justify-start gap-20 p-4'>
           <ul>
             <li className=''>
-              <a href='#' className='text-2xl'>
+              <a href='/' className='text-4xl font-bold'>
                 Contact
               </a>
             </li>
             <li className=''>
-              <a href='#' className='text-2xl'>
+              <a href='/charts' className='text-4xl font-bold'>
                 Charts And Map
               </a>
             </li>
@@ -29,8 +29,8 @@ const Nav = () => {
         <>
           {open ? (
             <>
-              <nav className='absolute inset-0 bg-stone-200'>
-                <button onClick={closeMenu}>
+              <nav className='absolute inset-0 bg-gray-200 z-20 p-10 flex flex-col items-center justify-evenly'>
+                <button className='absolute top-5 left-5' onClick={closeMenu}>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'
@@ -43,18 +43,22 @@ const Nav = () => {
                     />
                   </svg>
                 </button>
-                <ul>
+                <ul className='flex-grow flex flex-col items-center justify-evenly gap-6'>
                   <li>
-                    <a href='#'>Contact</a>
+                    <a href='/' className='text-4xl font-bold'>
+                      Contact
+                    </a>
                   </li>
                   <li>
-                    <a href='#'>Charts And Map</a>
+                    <a href='/Charts' className='text-4xl font-bold'>
+                      Charts And Map
+                    </a>
                   </li>
                 </ul>
               </nav>
             </>
           ) : (
-            <button onClick={openMenu}>
+            <button className='absolute top-5 left-4' onClick={openMenu}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'

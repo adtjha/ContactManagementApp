@@ -44,20 +44,12 @@ const ContactsComponent: React.FC = () => {
     dispatch(deleteContact(id));
   };
 
-  const [openCreate, setOpenCreate] = useState(false);
-  const handleOpenCreate = () => setOpenCreate(!openCreate);
-
   return (
-    <div>
-      {/* <Button onClick={handleAddContact}>Add Contact</Button> */}
-      <CreateContact
-        openCreate={openCreate}
-        setOpenCreate={setOpenCreate}
-        handleOpen={handleOpenCreate}
-      />
-      <ul className='flex flex-col flex-wrap items-center justify-center'>
+    <div className='flex flex-col items-center justify-center'>
+      <CreateContact />
+      <ul className='flex flex-wrap items-center justify-center'>
         {contacts.map((contact) => (
-          <Card className='my-10' key={contact.id}>
+          <Card className='m-4' key={contact.id}>
             <li>
               <CardBody>
                 <Typography variant='h5' color='blue-gray' className='mb-2'>
