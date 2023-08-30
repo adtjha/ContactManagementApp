@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Nav";
 import Home from "./components/Home";
 import { ChartsAndMaps } from "./components/Charts&Maps";
+import Nav from "./components/nav";
 
 function App() {
   return (
