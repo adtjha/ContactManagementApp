@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import { ChartsAndMaps } from "./components/Charts&Maps";
-import Nav from "./components/nav";
+import Nav from "./components/Nav";
 
 function App() {
   return (
