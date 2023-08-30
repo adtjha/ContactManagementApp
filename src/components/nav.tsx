@@ -12,14 +12,14 @@ const Nav = () => {
     <>
       {size.width !== null && size.width > 720 ? (
         <nav className='min-w-[320px] border-r-2 h-auto bg-stone-200 flex flex-col items-start justify-start gap-20 p-4'>
-          <ul>
+          <ul className='flex-grow flex flex-col items-center justify-evenly gap-6'>
             <li className=''>
-              <a href='/' className='text-4xl font-bold'>
+              <a href='/' className='hover:underline text-4xl font-bold'>
                 Contact
               </a>
             </li>
             <li className=''>
-              <a href='/charts' className='text-4xl font-bold'>
+              <a href='/charts' className='hover:underline text-4xl font-bold'>
                 Charts And Map
               </a>
             </li>

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../redux/store";
-import { updateContact, deleteContact } from "../redux/contactsSlice";
+import { deleteContact } from "../redux/contactsSlice";
 import {
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
@@ -16,29 +15,6 @@ import { EditContact } from "./EditContact";
 const ContactsComponent: React.FC = () => {
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
   const dispatch = useDispatch<AppDispatch>();
-
-  // const handleAddContact = ({ firstName, lastName, status }) => {
-  //   const newContact = {
-  //     id: ~~(Math.random() * 10000000), // You might want to use a better way to generate IDs
-  //     firstName,
-  //     lastName,
-  //     status,
-  //   };
-  //   dispatch(addContact(newContact));
-  // };
-
-  const handleEditContact = (id: number) => {
-    const editedContact = contacts.find((contact) => contact.id === id);
-
-    if (editedContact) {
-      const updatedContact = {
-        ...editedContact,
-        firstName: "Updated",
-        status: !editedContact.status,
-      };
-      dispatch(updateContact(updatedContact));
-    }
-  };
 
   const handleDeleteContact = (id: number) => {
     dispatch(deleteContact(id));
